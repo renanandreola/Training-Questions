@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/solve-me-first/problem?isFullScreen=true
+
 process.stdin.resume();
 process.stdin.setEncoding("ascii");
 
