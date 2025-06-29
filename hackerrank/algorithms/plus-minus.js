@@ -1,4 +1,4 @@
-// https://www.hackerrank.com/challenges/plus-minus/problem?isFullScreen=true
+// https://www.hackerrank.com/challenges/one-week-preparation-kit-plus-minus/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-week-preparation-kit&playlist_slugs%5B%5D=one-week-day-one
 
 "use strict";
 
@@ -29,33 +29,28 @@ function readLine() {
  */
 
 function plusMinus(arr) {
-  var countPositive = 0;
-  var countNegative = 0;
-  var countZero = 0;
+  const arrSize = arr.length;
+  let positiveNumbers = 0;
+  let negativeNumbers = 0;
+  let zeroNumbers = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === 0) {
-      countZero++;
+  for (let number of arr) {
+    if (number == 0) {
+      zeroNumbers++;
     }
 
-    if (arr[i] > 0) {
-      countPositive++;
+    if (number > 0) {
+      positiveNumbers++;
     }
 
-    if (arr[i] < 0) {
-      countNegative++;
+    if (number < 0) {
+      negativeNumbers++;
     }
   }
 
-  let postitive = (countPositive / arr.length).toFixed(6);
-  let negative = (countNegative / arr.length).toFixed(6);
-  let zero = (countZero / arr.length).toFixed(6);
-
-  console.log(postitive);
-  console.log(negative);
-  console.log(zero);
-
-  return postitive, negative, zero;
+  console.log(positiveNumbers / arrSize);
+  console.log(negativeNumbers / arrSize);
+  console.log(zeroNumbers / arrSize);
 }
 
 function main() {
