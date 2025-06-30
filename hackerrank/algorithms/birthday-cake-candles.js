@@ -1,4 +1,4 @@
-// https://www.hackerrank.com/challenges/one-week-preparation-kit-lonely-integer/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-week-preparation-kit&playlist_slugs%5B%5D=one-week-day-two
+// https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true
 
 "use strict";
 
@@ -24,21 +24,32 @@ function readLine() {
   return inputString[currentLine++];
 }
 
-function lonelyinteger(a) {
-  return a.reduce((acc, num) => acc ^ num);
+function birthdayCakeCandles(candles) {
+  let count = 0;
+  let bestNumber = Math.max.apply(null, candles);
+
+  for (let i = 0; i < candles.length; i++) {
+    if (candles[i] == bestNumber) {
+      count++;
+    }
+  }
+
+  console.log(count);
+
+  return count;
 }
 
 function main() {
   const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
-  const n = parseInt(readLine().trim(), 10);
+  const candlesCount = parseInt(readLine().trim(), 10);
 
-  const a = readLine()
+  const candles = readLine()
     .replace(/\s+$/g, "")
     .split(" ")
-    .map((aTemp) => parseInt(aTemp, 10));
+    .map((candlesTemp) => parseInt(candlesTemp, 10));
 
-  const result = lonelyinteger(a);
+  const result = birthdayCakeCandles(candles);
 
   ws.write(result + "\n");
 

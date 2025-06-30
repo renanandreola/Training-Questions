@@ -22,12 +22,6 @@ function readLine() {
   return inputString[currentLine++];
 }
 
-/*
- * Complete the 'plusMinus' function below.
- *
- * The function accepts INTEGER_ARRAY arr as parameter.
- */
-
 function plusMinus(arr) {
   const arrSize = arr.length;
   let positiveNumbers = 0;
